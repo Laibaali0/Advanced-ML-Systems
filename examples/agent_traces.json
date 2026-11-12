@@ -1,0 +1,32 @@
+[
+  {
+    "name": "lookup a catalog item",
+    "calls": [
+      {
+        "tool": "catalog_lookup",
+        "arguments": {"sku": "SKU-2"},
+        "expected": {"title": "Canvas Bag", "price_cents": 2499}
+      }
+    ]
+  },
+  {
+    "name": "reject a write request",
+    "calls": [
+      {
+        "tool": "delete_item",
+        "arguments": {"sku": "SKU-1"},
+        "expected_error": "not permitted"
+      }
+    ]
+  },
+  {
+    "name": "add integer prices",
+    "calls": [
+      {
+        "tool": "add_numbers",
+        "arguments": {"a": 7999, "b": 2499},
+        "expected": 10498
+      }
+    ]
+  }
+]
